@@ -74,7 +74,7 @@ const Customizer = () => {
   const generateTabContent = () => {
     switch (activeEditorTab) {
       case "colorpicker":
-        return <ColorPicker />
+        return <ColorPicker/>
       case "filepicker":
         return <FilePicker
           file={file}
@@ -82,9 +82,27 @@ const Customizer = () => {
           readFile={readFile}
         />
       case "aipicker":
-        return <AIPicker/>
+        return <AIPicker
+          prompt={prompt}
+          setPrompt={setPrompt}
+          generatingImg={generatingImg}
+          handleSubmit={handleSubmit}
+        />
       default:
         return null;
+    }
+  }
+
+  const handleSubmit = async () => {
+    if(!prompt) return alert("Please enter a prompt.")
+
+    try {
+
+    } catch (error) {
+       alert(error)
+    } finally {
+      setGeneratingImg(false)
+      setActiveEditorTab("")
     }
   }
 
