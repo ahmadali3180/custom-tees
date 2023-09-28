@@ -38,7 +38,7 @@ const Home = () => {
                 Create your own unique design for your T-Shirt, with our
                 brand-new <br className="xl:block hidden" /> 3D customization
                 tool. <strong>Unleash your imagination</strong> and define your
-                own style
+                own style with the <strong>Design with AI</strong> feature
               </p>
             </motion.div>
             <CustomButton
