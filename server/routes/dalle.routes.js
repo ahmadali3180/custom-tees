@@ -18,7 +18,7 @@ router.route('/').post(async (req, res) => {
   try {
     const { prompt } = req.body;
 
-    const response = await openai.createImage({
+    const response = await openai.images.generate({
       prompt,
       n: 1,
       size: '1024x1024',
@@ -30,7 +30,7 @@ router.route('/').post(async (req, res) => {
     res.status(200).json({ photo: image });
   } catch (error) {
     console.error(error);
-    res.status(500).json({ message: "Something went wrong" })
+    res.status(500).json({ message: "Something went wrong", error: error })
   }
 })
 
